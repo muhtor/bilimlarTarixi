@@ -22,5 +22,12 @@ ul{
     margin-top: 50px;
 }
 .content{
-    margin-left: 250px;
+    margin-left: 260px;
+}
+.container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.item{
 }
