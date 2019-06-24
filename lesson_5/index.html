@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../dependencies/bootstrapFramework/pretty-checkbox.min.css">
+    <title>My Logic</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        table tr, td{
+            font-family: monospace;
+            border: 1px solid #000;
+            text-align: center;
+        }
+        .container{
+            width: 1200px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+        .row{
+            margin: 20px;
+        }
+        td {
+            height: 30px;
+            padding: 0.2em 0.3em 0.1em 0.3em;
+        }
+        table{
+            border: 2px solid #000;
+            width: 1100px;
+            font-size: 17px;
+        }
+        .out{
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+<body>
+    <h1>example</h1>
+    <div class="container">    
+        <div class="row">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Category</th>
+                        <th>Vata</th>
+                        <th>Pitta</th>
+                        <th>Kapxa</th>
+                        <th>Answers</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <td>Tanasi</td>
+                        <td class="selectVata">Savol_V</td>
+                        <td class="selectPitta">Savol_P</td>
+                        <td class="selectKapxa">Savol_K</td>
+                        <td class="out">
+                            <!-- 
+                                <div class="flex pretty p-switch p-fill">
+                                    <input type="checkbox" />
+                                    <div class="state">
+                                        <label>Vata</label>
+                                    </div>
+                                </div>
+                                <div class="flex pretty p-switch p-fill">
+                                    <input type="checkbox" />
+                                    <div class="state">
+                                        <label>Pitta</label>
+                                    </div>
+                                </div>
+                                <div class="flex pretty p-switch p-fill">
+                                    <input type="checkbox" />
+                                    <div class="state">
+                                        <label>Kapxa</label>
+                                    </div>
+                                </div>
+                                 -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>2</th>
+                        <td>Kuzlari</td>
+                        <td class="selectVata">Savol_V</td>
+                        <td class="selectPitta">Savol_P</td>
+                        <td class="selectKapxa">Savol_K</td>
+                        <td class="out">?</td>  
+                    </tr>
+                    <tr>
+                        <th>3</th>
+                        <td>Oyog'i</td>
+                        <td class="selectVata">Savol_V</td>
+                        <td class="selectPitta">Savol_P</td>
+                        <td class="selectKapxa">Savol_K</td>
+                        <td class="out">?</td>
+                    </tr>
+                    <tr>
+                        <th>4</th>
+                        <td>Jigari</td>
+                        <td class="selectVata">Savol_V</td>
+                        <td class="selectPitta">Savol_P</td>
+                        <td class="selectKapxa">Savol_K</td>
+                        <td class="out">?</td>
+                    </tr>
+                    <tr>
+                        <th>5</th>
+                        <td>Pochkasi</td>
+                        <td class="selectVata">Savol_V</td>
+                        <td class="selectPitta">Savol_P</td>
+                        <td class="selectKapxa">Savol_K</td>
+                        <td class="out">?</td>
+                    </tr>
+                    <tr>
+                        <th>6</th>
+                        <td>Sochlari</td>
+                        <td class="selectVata">Savol_V</td>
+                        <td class="selectPitta">Savol_P</td>
+                        <td class="selectKapxa">Savol_K</td>
+                        <td class="out">?</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+<script>
+    // Функция изменяет содержимое t2
+    /*
+    function modifyText() {
+        var t2 = document.getElementById("t2");
+        if (t2.firstChild.nodeValue == "три") {
+          t2.firstChild.nodeValue = "два";
+        } else {
+          t2.firstChild.nodeValue = "три";
+        }
+      }
+
+      // Добавляет слушателя событий для таблицы
+      var el = document.getElementById("outSide");
+      el.addEventListener("click", modifyText);
+    */
+
+    let selectVata = document.querySelectorAll('.selectVata');
+    let selectPitta = document.querySelectorAll('.selectPitta');
+    let selectKapxa = document.querySelectorAll('.selectKapxa');
+
+    for (let i = 0; i < selectVata.length; i++) {
+        selectVata[i].onclick = selectValueVata;
+    }
+    function selectValueVata(e){
+        // document.querySelector('.out').innerHTML = "VATA";
+    }
+
+    // -----------------------------------------------
+
+    for (let i = 0; i < selectPitta.length; i++) {
+        selectPitta[i].onclick = selectValuePitta;
+    }
+    function selectValuePitta(e){
+        // document.querySelector('.out').innerHTML = "PITTA";
+    }
+
+    // ---------------------------------------
+
+    for (let i = 0; i < selectKapxa.length; i++) {
+        selectKapxa[i].onclick = selectValueKapxa;
+    }
+    function selectValueKapxa(e){
+        // document.querySelector('.out').innerHTML = "KAPXA";
+    }
+
+    const container = document.querySelector('.container');
+
+    container.addEventListener('click', function (e) {
+        let select = e.target.classList.value;
+        if (select !== '') {
+            let output = '';
+            switch (select) {
+                case 'selectVata':
+                    output = 'VATA';
+                    break;
+                case 'selectPitta':
+                    output = 'PITTA';
+                    break;
+                case 'selectKapxa':
+                    output = 'KAPXA';
+                    break;
+            }
+            e.target.parentElement.querySelector('.out').innerHTML = output;
+        }
+    });
+</script>
+</body>
+</html>

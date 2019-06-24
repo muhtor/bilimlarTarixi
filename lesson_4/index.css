@@ -52,12 +52,6 @@ header .nav-item a:hover::after { transform: scale(1); }
     margin-left: 20px;
 }
 
-
-
-
-
-
-
 @media only screen and (max-width: 1200px) {
 }
 

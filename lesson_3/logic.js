@@ -8,58 +8,102 @@ function modifyText() {
       t2.firstChild.nodeValue = "три";
     }
   }
-  
-  // Добавляет слушателя событий для таблицы
   var el = document.getElementById("outSide");
   el.addEventListener("click", modifyText);
 */
 
-let selectVata = document.querySelectorAll('.selectVata');
-let selectPitta = document.querySelectorAll('.selectPitta');
-let selectKapxa = document.querySelectorAll('.selectKapxa');
+/********************** quyidagi alohida function **********************/
+/*
 
-for (let i = 0; i < selectVata.length; i++) { 
-    selectVata[i].onclick = selectValueVata; 
-}
-function selectValueVata(e){
-  // document.querySelector('.out').innerHTML = "VATA";
-}
+let selectVatas = document.querySelectorAll('.selectVata');
+let selectPittas = document.querySelectorAll('.selectPitta');
+let selectKapxas = document.querySelectorAll('.selectKapxa');
+const container = document.querySelector('.row');
 
-// -----------------------------------------------
-
-for (let i = 0; i < selectPitta.length; i++) { 
-    selectPitta[i].onclick = selectValuePitta; 
-}
-function selectValuePitta(e){
-  // document.querySelector('.out').innerHTML = "PITTA";
-}
-
-// ---------------------------------------
-
-for (let i = 0; i < selectKapxa.length; i++) { 
-    selectKapxa[i].onclick = selectValueKapxa; 
-}
-function selectValueKapxa(e){
-  // document.querySelector('.out').innerHTML = "KAPXA";
-}
-
-const container = document.querySelector('.container');
-
-container.addEventListener('click', function (e) {
+container.addEventListener('click', function(e) {
     let select = e.target.classList.value;
     if (select !== '') {
-        let output = ''
+        let output = '';
         switch (select) {
-            case 'selectVata':
-                output = 'VATA'
+            case 'selectVatas':
+                output = 'VATA';
                 break;
-            case 'selectPitta':
-                output = 'PITTA'
+            case 'selectPittas':
+                output = 'PITTA';
                 break;
-            case 'selectKapxa':
-                output = 'KAPXA'
+            case 'selectKapxas':
+                output = 'KAPXA';
                 break;
         }
         e.target.parentElement.querySelector('.out').innerHTML = output;
     }
+});
+*/
+
+let selectVatalar = document.querySelectorAll('.selectVata');
+let selectPittalar = document.querySelectorAll('.selectPitta');
+let selectKapxalar = document.querySelectorAll('.selectKapxa');
+
+const outVata = document.getElementById('outVata');
+const outPitta = document.getElementById('outPitta');
+const outKapxa = document.getElementById('outKapxa');
+
+
+/*---------------------------------------*/
+for (let i = 0; i < selectVatalar.length; i++) {
+    selectVatalar[i].onclick = getVataValue;
+}
+let vataCounter = 0;
+function getVataValue(e){
+    let select = e.target.value;
+    if (select) {
+        vataCounter++;
+        outVata.innerHTML = vataCounter;
+    }
+}
+/*----------------------------------------*/
+for (let i = 0; i < selectPittalar.length; i++) {
+    selectPittalar[i].onclick = getPittaValue;
+}
+let pittaCounter = 0;
+function getPittaValue(e){
+    let select = e.target.value;
+    if (select) {
+        pittaCounter++;
+        outPitta.innerHTML = pittaCounter;
+    }
+}
+/*-----------------------------------*/
+for (let i = 0; i < selectKapxalar.length; i++) {
+    selectKapxalar[i].onclick = getKapxaValue;
+}
+let kapxaCounter = 0;
+function getKapxaValue(e){
+    let select = e.target.value;
+    if (select) {
+        kapxaCounter++;
+        outKapxa.innerHTML = kapxaCounter;
+    }
+}
+//*********************************************
+$('.selectVata').on('change', function () {
+    var $this = $(this);
+    if ($this.prop('disabled')) {
+        return false;
+    }
+    $this.prop('disabled', true);
+});
+$('.selectPitta').on('change', function () {
+    var $this = $(this);
+    if ($this.prop('disabled')) {
+        return false;
+    }
+    $this.prop('disabled', true);
+});
+$('.selectKapxa').on('change', function () {
+    var $this = $(this);
+    if ($this.prop('disabled')) {
+        return false;
+    }
+    $this.prop('disabled', true);
 });

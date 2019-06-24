@@ -1,104 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="pretty-checkbox.min.css">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css"/> -->
+    <link rel="stylesheet" href="../dependencies/bootstrapFramework/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../dependencies/bootstrapFramework/pretty-checkbox.min.css">
     <title>lesson</title>
-</head>
-<body>
-    <h1>example</h1>
-    <div class="container">    
-        <div class="row">
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Category</th>
-                        <th>Vata</th>
-                        <th>Pitta</th>
-                        <th>Kapxa</th>
-                        <th>Answers</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>1</th>
-                        <td>Tanasi</td>
-                        <td class="selectVata">Savol_V</td>
-                        <td class="selectPitta">Savol_P</td>
-                        <td class="selectKapxa">Savol_K</td>
-                        <td class="out">
-                            <!-- 
-                                <div class="flex pretty p-switch p-fill">
-                                    <input type="checkbox" />
-                                    <div class="state">
-                                        <label>Vata</label>
-                                    </div>
-                                </div>
-                                <div class="flex pretty p-switch p-fill">
-                                    <input type="checkbox" />
-                                    <div class="state">
-                                        <label>Pitta</label>
-                                    </div>
-                                </div>
-                                <div class="flex pretty p-switch p-fill">
-                                    <input type="checkbox" />
-                                    <div class="state">
-                                        <label>Kapxa</label>
-                                    </div>
-                                </div>
-                                 -->
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>2</th>
-                        <td>Kuzlari</td>
-                        <td class="selectVata">Savol_V</td>
-                        <td class="selectPitta">Savol_P</td>
-                        <td class="selectKapxa">Savol_K</td>
-                        <td class="out">?</td>  
-                    </tr>
-                    <tr>
-                        <th>3</th>
-                        <td>Oyog'i</td>
-                        <td class="selectVata">Savol_V</td>
-                        <td class="selectPitta">Savol_P</td>
-                        <td class="selectKapxa">Savol_K</td>
-                        <td class="out">?</td>
-                    </tr>
-                    <tr>
-                        <th>4</th>
-                        <td>Jigari</td>
-                        <td class="selectVata">Savol_V</td>
-                        <td class="selectPitta">Savol_P</td>
-                        <td class="selectKapxa">Savol_K</td>
-                        <td class="out">?</td>
-                    </tr>
-                    <tr>
-                        <th>5</th>
-                        <td>Pochkasi</td>
-                        <td class="selectVata">Savol_V</td>
-                        <td class="selectPitta">Savol_P</td>
-                        <td class="selectKapxa">Savol_K</td>
-                        <td class="out">?</td>
-                    </tr>
-                    <tr>
-                        <th>6</th>
-                        <td>Sochlari</td>
-                        <td class="selectVata">Savol_V</td>
-                        <td class="selectPitta">Savol_P</td>
-                        <td class="selectKapxa">Savol_K</td>
-                        <td class="out">?</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+    <style>
+        .answer{
+            width: 100px;
+        }
 
+        .vpk-natija{
+            display: flex;
+            flex-flow: wrap;
+            justify-content: center;
+            width: 100%;
+            height: 250px;
+            border: 1px solid #333333;
+            text-align: center;
+            padding-right: 30px;
+        }
+
+        .content{
+            width: 90%;
+            height: 170px;
+            font-size: 30px;
+        }
+        .block{
+            background: #ced4da;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <header>
+        <h1 class="text-center">Test VATA Pitta Kapxa</h1>
+    </header>
+    <section class="row table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+            <tr class="table-info">
+                <th>ID</th>
+                <th>Category</th>
+                <th>Vata</th>
+                <th>Pitta</th>
+                <th>Kapxa</th>
+                <th>Answers</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--********** start rows ***********-->
+            <tr class="colump">
+                <th>1</th>
+                <td>Savollar...</td>
+                <td><div><p>Savol_V</p></div></td>
+                <td><div><p>Savol_P</p></div></td>
+                <td><div><p>Savol_K</p></div></td>
+                <td class="answer">
+                    <div class="flex pretty p-switch p-fill">
+                        <input type="radio" class="selectVata" value="VATA">
+                        <div class="state">
+                            <label>Vata</label>
+                        </div>
+                    </div>
+                    <div class="flex pretty p-switch p-fill">
+                        <input type="radio" class="selectPitta" value="PITTA">
+                        <div class="state">
+                            <label>Pitta</label>
+                        </div>
+                    </div>
+                    <div class="flex pretty p-switch p-fill">
+                        <input type="radio" class="selectKapxa" value="KAPXA">
+                        <div class="state">
+                            <label>Kapxa</label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <!--********** end rows ***********-->
+            <!--********** start rows *********-->
+            <tr class="colump">
+                <th>1</th>
+                <td>Savollar...</td>
+                <td><div><p>Savol_V</p></div></td>
+                <td><div><p>Savol_P</p></div></td>
+                <td><div><p>Savol_K</p></div></td>
+                <td class="answer">
+                    <div class="flex pretty p-switch p-fill">
+                        <input type="radio" class="selectVata" value="VATA">
+                        <div class="state">
+                            <label>Vata</label>
+                        </div>
+                    </div>
+                    <div class="flex pretty p-switch p-fill">
+                        <input type="radio" class="selectPitta" value="PITTA">
+                        <div class="state">
+                            <label>Pitta</label>
+                        </div>
+                    </div>
+                    <div class="flex pretty p-switch p-fill">
+                        <input type="radio" class="selectKapxa" value="KAPXA">
+                        <div class="state">
+                            <label>Kapxa</label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <!--********** end rows ***********-->
+            <!--********** start rows *********-->
+            <tr class="colump">
+                <th>1</th>
+                <td>Savollar...</td>
+                <td><div><p>Savol_V</p></div></td>
+                <td><div><p>Savol_P</p></div></td>
+                <td><div><p>Savol_K</p></div></td>
+                <td class="answer">
+                    <div class="flex pretty p-switch p-fill">
+                        <input type="radio" class="selectVata" value="VATA">
+                        <div class="state">
+                            <label>Vata</label>
+                        </div>
+                    </div>
+                    <div class="flex pretty p-switch p-fill">
+                        <input type="radio" class="selectPitta" value="PITTA">
+                        <div class="state">
+                            <label>Pitta</label>
+                        </div>
+                    </div>
+                    <div class="flex pretty p-switch p-fill">
+                        <input type="radio" class="selectKapxa" value="KAPXA">
+                        <div class="state">
+                            <label>Kapxa</label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <!--********** end rows ***********-->
+            <!--********** start rows *********-->
+            <tr class="colump">
+                <th>1</th>
+                <td>Savollar...</td>
+                <td><div><p>Savol_V</p></div></td>
+                <td><div><p>Savol_P</p></div></td>
+                <td><div><p>Savol_K</p></div></td>
+                <td class="answer">
+                    <div class="flex pretty p-switch p-fill">
+                        <input type="radio" class="selectVata" value="VATA">
+                        <div class="state">
+                            <label>Vata</label>
+                        </div>
+                    </div>
+                    <div class="flex pretty p-switch p-fill">
+                        <input type="radio" class="selectPitta" value="PITTA">
+                        <div class="state">
+                            <label>Pitta</label>
+                        </div>
+                    </div>
+                    <div class="flex pretty p-switch p-fill">
+                        <input type="radio" class="selectKapxa" value="KAPXA">
+                        <div class="state">
+                            <label>Kapxa</label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <!--********** end rows ***********-->
+            </tbody>
+        </table>
+        <!--********* Natija ************-->
+        <hr>
+        <div class="vpk-natija">
+            <h2>umumiy natija</h2>
+            <div class="content d-inline-flex">
+                <div class="block mr-3 col-xl-4">
+                    <p class="mt-4 text-monospace text-secondary">Vata:</p>
+                    <span class="font-weight-bolder" id="outVata"></span>
+                </div>
+                <div class="block mr-3 col-xl-4"><p class="mt-4 text-monospace text-secondary">Pitta:</p>
+                    <span class="font-weight-bolder" id="outPitta"></span>
+                </div>
+                <div class="block mr-3 col-xl-4">
+                    <p class="mt-4 text-monospace text-secondary">Kapxa:</p>
+                    <span class="font-weight-bolder" id="outKapxa"></span></div>
+            </div>
+        </div>
+    </section>
+</div>
+<!--    </section>-->
+<script src="../dependencies/bootstrapFramework/js/jquery-3.4.1.min.js"></script>
+<script src="../dependencies/bootstrapFramework/js/popper.min.js"></script>
+<script src="../dependencies/bootstrapFramework/js/bootstrap.bundle.js"></script>
+<script src="../dependencies/bootstrapFramework/js/bootstrap.min.js"></script>
 <script src="logic.js"></script>
 </body>
+
 </html>

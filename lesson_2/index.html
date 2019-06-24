@@ -3,22 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>exemple JS</title>
-    <link rel="stylesheet" href="main.css">
 </head>
+<style>
+    .parking p{
+        border: 1px solid #333333;
+        padding: 10px;
+        font-family: monospace;
+        font-size: 18px;
+    }
+    input{
+        font-size: 20px;
+    }
+
+    #elem{
+        width: 100px;
+        height: 100px;
+        background-color: burlywood;
+
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+    #parent{
+        width: 200px;
+        height: 200px;
+        margin-top: 100px;
+        background-color: chocolate;
+    }
+</style>
 <body>
 
 <div class="parking">
     <p>Avtomobilni Parkingga kirib kelgan vaqti.
-        <input type="text" size="3" name="enter" id="enter" placeholder="daqiqa">
+        <input type="text" size="3" name="enter" class="enter" placeholder="daqiqa">
         <input type="button" value="enter" id="getEnter">
     </p>
     <p>Avtomobilni Parkingda qancha vaqt turganligi 
-        <input type="text" size="3" name="wait" id="enter" placeholder="daqiqa">
+        <input type="text" size="3" name="wait" class="enter" placeholder="daqiqa">
         <input type="button" value="wait" id="">
     </p>
     <p>Avtomobilni Parkingdan chiqib ketgan vaqti
-        <input type="text" size="3" name="exit" id="enter" placeholder="daqiqa">
-        <input type="button" value="exit" id="">
+        <input type="text" size="3" name="exit" class="enter" placeholder="daqiqa">
+        <input type="button" value="exit">
     </p>
 
 
@@ -28,7 +54,30 @@
 <div id="parent"></div>
 
 
-<script src="main.js"></script>
+<script>
+    let elem = document.querySelector('#elem');
+    let parent = document.querySelector('#parent');
+
+    let offsetX;
+    let offsetY;
+
+    elem.addEventListener('dragstart', function (event) {
+        offsetX = event.offsetX;
+        offsetY = event.offsetY;
+    });
+
+    elem.addEventListener('dragend', function (event) {
+        elem.style.top = ( event.pageY - offsetY) + 'px';
+        elem.style.left = ( event.pageX - offsetX) + 'px';
+    });
+
+    let getEnter = document.querySelector('#getEnter').addEventListener('click', getInputValue);
+
+    function getInputValue(){
+        let inpValue = document.querySelector('#enter').value;
+    }
+
+</script>
 
 </body>
 </html>
