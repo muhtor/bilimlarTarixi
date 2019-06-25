@@ -11,10 +11,12 @@ function modifyText() {
   var el = document.getElementById("outSide");
   el.addEventListener("click", modifyText);
 */
+let resultTD;
+resultTD = document.querySelectorAll('.result');
 
-/********************** quyidagi alohida function **********************/
+
 /*
-
+/ ----------- quyidagi alohida function ----------- /
 let selectVatas = document.querySelectorAll('.selectVata');
 let selectPittas = document.querySelectorAll('.selectPitta');
 let selectKapxas = document.querySelectorAll('.selectKapxa');
@@ -44,66 +46,53 @@ let selectVatalar = document.querySelectorAll('.selectVata');
 let selectPittalar = document.querySelectorAll('.selectPitta');
 let selectKapxalar = document.querySelectorAll('.selectKapxa');
 
+
+
+/************* This function for td style display none ************/
+let tdAnswer = document.querySelectorAll('.prettyCheckbox');
+for (let i = 0; i < tdAnswer.length; i++) {
+    tdAnswer[i].onclick = tdAnswerFalse;
+}
+
+function tdAnswerFalse() {
+    this.style.left = '135px';
+
+}
+/************* td function end ***********/
+
 const outVata = document.getElementById('outVata');
 const outPitta = document.getElementById('outPitta');
 const outKapxa = document.getElementById('outKapxa');
 
 
 /*---------------------------------------*/
-for (let i = 0; i < selectVatalar.length; i++) {
-    selectVatalar[i].onclick = getVataValue;
-}
 let vataCounter = 0;
-function getVataValue(e){
-    let select = e.target.value;
-    if (select) {
-        vataCounter++;
+for (let i = 0; i < selectVatalar.length; i++) {
+    selectVatalar[i].onclick = function (e){
+        let select = e.target.value;
+        for (let j = 0; j < resultTD.length; j++) { resultTD[i].innerHTML = select; }
+        if (select) { vataCounter++; }
         outVata.innerHTML = vataCounter;
-    }
+    };
 }
 /*----------------------------------------*/
-for (let i = 0; i < selectPittalar.length; i++) {
-    selectPittalar[i].onclick = getPittaValue;
-}
 let pittaCounter = 0;
-function getPittaValue(e){
-    let select = e.target.value;
-    if (select) {
-        pittaCounter++;
+for (let i = 0; i < selectPittalar.length; i++) {
+    selectPittalar[i].onclick = function (e){
+        let select = e.target.value;
+        for (let j = 0; j < resultTD.length; j++) { resultTD[i].innerHTML = select; }
+        if (select) { pittaCounter++; }
         outPitta.innerHTML = pittaCounter;
     }
 }
+
 /*-----------------------------------*/
-for (let i = 0; i < selectKapxalar.length; i++) {
-    selectKapxalar[i].onclick = getKapxaValue;
-}
 let kapxaCounter = 0;
-function getKapxaValue(e){
-    let select = e.target.value;
-    if (select) {
-        kapxaCounter++;
+for (let i = 0; i < selectKapxalar.length; i++) {
+    selectKapxalar[i].onclick = function (e){
+        let select = e.target.value;
+        for (let j = 0; j < resultTD.length; j++) { resultTD[i].innerHTML = select; }
+        if (select) { kapxaCounter++;}
         outKapxa.innerHTML = kapxaCounter;
     }
 }
-//*********************************************
-$('.selectVata').on('change', function () {
-    var $this = $(this);
-    if ($this.prop('disabled')) {
-        return false;
-    }
-    $this.prop('disabled', true);
-});
-$('.selectPitta').on('change', function () {
-    var $this = $(this);
-    if ($this.prop('disabled')) {
-        return false;
-    }
-    $this.prop('disabled', true);
-});
-$('.selectKapxa').on('change', function () {
-    var $this = $(this);
-    if ($this.prop('disabled')) {
-        return false;
-    }
-    $this.prop('disabled', true);
-});
